@@ -1,0 +1,33 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Model Predictions</title>
+</head>
+<body>
+    <h1>ML Model Predictions</h1>
+    <form method="post">
+        <label for="sepal_length">Sepal Length (cm):</label>
+        <input type="text" id="sepal_length" name="sepal_length" required>
+        <br>
+        <label for="sepal_width">Sepal Width (cm):</label>
+        <input type="text" id="sepal_width" name="sepal_width" required>
+        <br>
+        <label for="petal_length">Petal Length (cm):</label>
+        <input type="text" id="petal_length" name="petal_length" required>
+        <br>
+        <label for="petal_width">Petal Width (cm):</label>
+        <input type="text" id="petal_width" name="petal_width" required>
+        <br>
+        <button type="submit">Predict</button>
+    </form>
+    {% if dt_prediction is not none %}
+        <h2>Predictions</h2>
+        <p>Decision Tree Prediction: {{ dt_prediction }}</p>
+        <p>Random Forest Prediction: {{ rf_prediction }}</p>
+        <p>SVM Prediction: {{ svm_prediction }}</p>
+    {% endif %}
+</body>
+</html>
